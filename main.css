@@ -1,0 +1,154 @@
+*{
+    margin: 0;  padding: 0;   /*so that it will not give any extra space*/
+}
+
+p{
+    width: 100%; height: 100vh;  /*width and hieght of <p> tag should be 100%, vh=visible height*/
+    color: red; /*color is mostly written in 3 ways i.e. color name (like red), hexa value (like #ff0000), rgb value (like rgb(255,0,0)*/
+
+    /*Background Properties*/
+    background-color: antiquewhite; 
+    background-image: url('i8.png');
+    background-repeat: no-repeat; /*so that background image will not repeat. If you want to repeat horizontally or vertically then write repeat-x or repeat-y*/
+    background-size: 100% 100%; /*a single image will take x%, y% background area.*/
+    background-attachment: fixed; /*by this background will be fixed. and the content after <p> tag wil move upward if any.*/ 
+    /*The background-position property is used to define the initial position of background image.*/
+
+    /*Cursor Properties*/
+    cursor: wait; /*On taking cursor to it, it shows wait symbol.*/
+    /*IIly, we have other cursors properties like auto, crosshair, default, pointer, move, text, wait, help, e-resize (e-resize=resize towards east, and IIly w,s,n,ne,nw,se,sw-resize)*/
+
+    line-height: 80px; /*text will be at 80px height.*/
+    float: right; /*Element floats to the right of its container. It basically use if we want to adjust multiple div horizontally like for navbar, we use float to adjust logo and different menu items in same line.*/
+    display: inline; /*It displays all the content in a single line, Like for menu options in navbar to show them in a single line. IIly, there is display: block; and display: inline-block;*/
+
+    /*Element is positioned relative to its normal position. But in absolute position, the element is positioned to the starting of the parent class and its position can be changed using left: 0; right: 0; top: 0; bottom: 0;. Normally, what we do is, give parent class as position relative and child class as absolute.*/
+    
+    /*position: absolute; 
+    right: 0; top: 0; /*Here the text will goes to bottom right position.*/ 
+
+    z-index: 3; /*It specifies stack order of an element for positioned element. For example: if there are 3 classes positioned absolute to left then the value with greater z-index will be in front of an element.*/
+}
+
+/*Parallax scrolling is a website trend where background content(i.e. an image) move with the foreground content while scrolling.For making parallax website, we do css same as <p> tag here and copy paste the complete css of that to the next tag css also. For example: there is <h1>, <h2> then we write these properties in css of both tags with different or same background image for both tags.*/
+
+
+#hi{
+    width: 200px;
+    height: 150px;
+    background-color: violet;
+
+    /*Font Properties*/
+    font-family: 'Notable', sans-serif; /*search for google fonts on google and change the font of your choice from there.*/
+    font-size: 40px;
+    font-style: italic;
+
+    /*Text Properties*/
+    color: blue;
+    letter-spacing: 2px; /*space between every letter*/
+    word-spacing: 5px; /*space between every word*/
+    text-align: center; /*text align to center horizontally*/
+    direction: rtl; /*writing text from right to left side*/
+    text-indent: 40px; /*Space before starting of this #hi*/
+    text-transform: uppercase; /*convert complete text into uppercase letter*/
+    text-shadow: 4px 5px 2px green; /*text-shadow: horizontalOffset verticalOffset blur color; */
+    word-wrap: break-word; /*break the continued text in another line, if there is overflow.*/
+
+    /*Scrollbar Properties*/
+    overflow: auto; /*use if there is overflow of text. IIly overflow: scroll, hidden;*/
+
+    /*Border Properties*/
+    border: 5px solid indigo; /*border: size style color. Border style property specifies what kind of border to display like dotted, dashed, solid, double, none, etc.*/
+    border-radius: 50px; 
+    box-shadow: 8px 9px 2px grey; /*box-shadow: horizontalOffset verticalOffset blur color; */
+    
+    box-sizing: border-box; /*It allows us to include the padding and border in an element's total width and height. actual width= width+ padding+ border, actual height= height+ padding+ border. Example: actual width= 100+20+30 =150. But if you want that total width should be 100, then we use box-sizing, which fixes its box size.*/
+
+    /*Box-Model Properties which is used to define the design and layout of elements of CSS and includes margin, border, padding, content.*/
+    padding: 40px 20px 40px 20px; /*padding: top right bottom left;*/
+    margin: 80px 60px 80px 60px; /*margin: top right bottom left;*/
+    /*Padding is for area around content while Margin is for area outside the border.*/
+}
+
+/*Link Properties*/
+/*Initially there is unvisited link (i.e. of red color) then, on taking cursor to the link it is hover, press the cursor it is active and after visiting it becomes visited link.*/
+a:link{ 
+    color: red;
+}
+
+a:visited{
+    color: green;
+}
+
+a:hover{
+    color: yellow;
+}
+
+a:active{
+    color: blue;
+}
+
+ol{
+    /*List Properties*/ 
+    /*before this remove <*> tag margin and padding to see properly.*/
+    list-style-type: none; /*for ol, you can also write as upper-alpha, lower-alpha, upper-roman, lower roman. For ul, you can write as square, circle, etc*/ 
+
+    /*Flex Properties is used to adjust your content nicely in a single row without using any float or positioning property.*/
+    display: flex; /*flex proerty is used to display all the content in a single line.*/
+    justify-content: space-around; /*It will adjust all the elements with equal space. IIly, justify-content: left, right, center*/
+    align-items: center; /*It will adjust all items height in the center of given space. IIly, other flex properties are flex direction, flex wrap, flex flow and align content.*/
+}
+
+.en{
+    resize: horizontal; /*The textarea (on which it is applied) can be resizable horizontally.*/
+}
+
+h1{
+    /*Multiple columns in CSS3 is used to write your text in multiple columns*/
+    column-count: 3; /*it converts your text into 3 columns*/
+    column-gap: 50px;
+    column-rule: dashed; /*IIly, column-rule: solid and others.*/
+
+    /*Linear Gradient is basically the mixture of two colors.*/
+    background-image: linear-gradient(blue, green); /*applying blue on top and green on bottom. If you want blue on left side and green on right side, then write linear-gradient(to right, blue, green)*/
+}
+
+
+/*Animation*/
+.hello{
+    width: 100%; height: 90px;
+    background-color: red;
+    position: relative;
+}
+
+.hello img{
+    width: 140px; height: 70px;
+    position: absolute;
+    left: 0; top: 8px;
+    /*Animation Properties*/
+    animation: bhag 4s linear 2s infinite reverse forwards; /*animation: name duration timing-function delay iteration-count direction fill-mode;*/
+}
+
+@keyframes bhag{ /*@keyframe binds the animation to the selector*/
+    0% {left: 0}    /*start*/
+    100% {left: 40%}    /*complete*/
+}
+
+
+/*Transition Properties and Transform Properties*/
+/*CSS transitions allows you to change property values smoothly, over a given duration. During transform, the other classes, borders or size will not be effected.*/
+.hlo{
+     width: 100px; height: 100px; 
+    transition: width 4s linear 1s; /*transition: property duration timing-function(linear=constant_speed) delay_in_transition_effect; */
+
+     transition: transform 2s; /*for smooth execution of transform. */
+    
+    transform: translatex(500px); /*moves x and y distance from current position.*/
+    transform: rotate(20deg); /*rotates clockwise*/
+    transform: scale(2,3); /*(width*2, height*3)*/
+    /*IIly, transform: matrix() combines all 2D transform into one.*/
+}
+
+.hlo:hover{
+    width: 250px; 
+}

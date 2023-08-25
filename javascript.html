@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Javascript file can be added internally or externally.-->
+    <!--<script src="javascriptmain.js"></script> is used to declare externally.-->
+</head>
+<body>
+    <button onmouseover="events()">Mouse</button> <!--on hover, event happens. IIly, onclick, onmousedown, onmouseout,etc.-->
+
+    <form name="calculator">
+        <br><br>Expression: <input type="text" name="expr">
+        <br><input type="button" onclick="cal()" value="Button"> 
+        <!--<input type="button" /> is used to create buttons in an HTML form. Inside the <button> tag, you can place content like text or images. Here, if we use <button> tag then on clicking it did its function and then again comes to starting point.-->
+        <br>Answer: <input type="text" name="ans">
+    </form>
+
+    <!--<span> is used for giving DOM (Document object Model). A document object represents the HTML document. DOM is used to access and change the content of HTML. Example of DOM: https://hackr.io/blog/uploads/images/1570190913LWXK9QvvvL.jpg
+    BOM (Browser Object Model) provides interaction with the browser. The default object of browser is a window which provides various properties like document, history, screen, navigator, application, innerHeight, innerWidth, etc. The window object is also used to display the popup dialog box.-->
+    <form onsubmit="return hey()">
+        <br><br>UserName: <input type="text" value="" id="user"> <span id="username"></span>
+        <br>Password: <input type="text" value="" id="pass"> <span id="password"></span>
+        <br><input type="submit" value="OK">
+    </form>
+
+
+    <!--Javascript Code-->
+    <script> //internal. In the end of body tag, it will execute faster.
+        basic(); //function declaration
+        /* function with value: basic(50,50);
+        function basic(50,50);*/
+        /* Immediately Invoked Function (IIFE): It is a function that runs as soon as it is defined.
+        (fn(){
+            //function definition
+        })();   */
+        /* Higher order functions: Functions that operate on other functions. Ex: here f1() is higher order function 
+        f1(){ 
+            f2();
+        } */
+        /* 
+        const intro1= fn1(){
+            console.log("My name is Muskan");
+        }
+        intro1(); //normal function
+        const intro= ()=>{ //arrow function
+            console.log("My name is Muskan");
+        } 
+        intro(); */
+
+        function basic(){  //function definition or code blocks
+            //In JS, all datatypes are declared using var. typeof() is used to find datatype. JS is a dynamically tyed language as type of variable is checked during runtime.
+            var a=10; //variable declaration
+            var c="10"; 
+            let n1="john"; //var and let both are used for method and variable declaration. var keyword is function scoped and let keyword is block scoped.
+            const n2="ravi"; //valus of const variable cannot be changed.
+            var n3=12e5; //12300000
+            var n4= 12e-5; //0.00012 //the max digits ater decimal=17.
+
+            document.write(a+b); //20 
+            var b=20; //Hoisting: Irrespective of  where the variables and functions are declared, they are moved on top of the scope.
+            
+            if(a==c) //== will check only value not datatype, but if you write === then it will check datatype also. In js also, we have same if, else if, else, for, while, do while, switch case.
+            {
+                //document.write("hi"+n1); and console.log(`hi ${n1}`); / console.log("hi"+n1); is used to write in any document.
+                document.write("<br> value is same"); 
+            }
+            //Implicit type coercion: The automatic conversion of value from one datatype to other. 
+            
+            document.write(a+c); //1010. For adding string, it converts number also into string.
+            document.write(a-c); //0. But in string '-' operator will not work so it converts both into integer.
+            document.write(c-a); //NAN (Not a number). IIly for *, /, %.
+            
+            //js evaluates expression from left to right.
+            var x= 16+4+"hi"; //20hi
+            var x1= "hi"+16+4; //hi164
+
+            var arr= new Array; //making array 
+            arr[0]= "Radhika";
+            arr[1]= "Muskan";
+            arr[2]= "Kapish";
+            /*We can also declare array as..*/ 
+            var a1= new Array("hello", "hi");
+            var a2= ["hey", "bye"];
+            document.write("<br>" + a1.concat(a2)); //concatination
+            arr.sort(); //for sorting according to ascii value. In case of both upper and lower letters, it will first print all upper case letters then lower case letters according to ascii value.
+            arr.reverse();
+            arr.push("yo"); //push value at the end. pop() deletes element from end.
+            arr.join("*"); //joins all elements with *. 
+            a1.concat(a2); //for concatenate two arrays.
+    
+            var item= {name:"pen", color:"blue", price:30}; //creating objects. Objects are also variable, but it can contains many values.
+            console.log(item.color);
+
+            var s1="javascript";
+            document.write("<br>" + s1.length); //10 
+            /*IIly, s1.charAt(4) returns character at given index.
+            s1.substring(4,7) returns substring at given index.
+            s1.charAt(4) returns character at given index.
+            s1.charCodeAt(4) returns ASCII value of element at given index.
+            s1.localeCompare("cri") returns 1 if value is present in s1.
+            s1.indexOf('c') returns index of given element.
+            s1.replace("muskan", "mittal") replaces a specific value.
+            s1.search("muskan") returns position of a specific value in a string.  
+            s1.trim() removes space from both left and right side.*/
+
+            document.write("<br>"+ Math.floor(50.99));
+            /*IIly, other Math functions are Math.round(50.9), Math.log(2), Math.max(10,20,30), Math.min(10,20,2), Math.pow(4,2), Math.sqrt(25), Math.random() (gives random value between 0, 1), Math.abs(-4.7), Math.ceil(4.4), Math.floor(4.4), etc. */
+
+            /*Date Methods*/
+            document.write(Date()); //gives date like Fri Jan 08 2021 20:38:19 GMT+0530 (India Standard Time)
+            
+            var dt= new Date();
+            document.write("<br>"+ dt.getDay()); //gives day like for tuesday it shows 2 (i.e. 2nd day of week)
+            document.write("<br>"+ dt.getTime()); //gives time in ms from 1 jan 1970
+            /*IIly we have other methods of Date like getFullYear(), getMilliseconds(), getHours(), getMinutes(), getMonth(), getSeconds(). We can also use these methods with setDay() and so on for taking input and set it accordingly.*/
+
+            var d= new Date("Dec 17, 2017 23:30:00");
+            document.write("<br>"+ d);
+            d.setDate(25);
+            document.write("<br>"+ d);
+        }
+
+        function events(){
+            //There are 3 types of dialogbox in js i.e. alert, confirm, prompt.
+            var s= prompt("Hi, My name is Muskan and yours ?", ""); //creates a textbox where you can take reply from user 
+            alert("Welcome "+ s); //creates an alertbox
+            if(confirm("you want to see website then click OK button ?")) //confirm asked to give confirmation.
+            {
+                window.location= "https://www.youtube.com"; //move your window to the given location.
+            }
+            else
+               alert("You clicked on cancel button."); 
+        }
+        
+        function cal(){ //eval is used to evaluate any expression. 
+            document.calculator.ans.value= eval(document.calculator.expr.value)
+        }
+
+        function hey(){
+            var un= document.getElementById("user").value;
+            var ps= document.getElementById("pass").value;
+
+            if(un==""){
+                document.getElementById("username").innerHTML="**Enter UserName"; //innerHTML prints this statement.
+                //The different ways of accessing JS elements in HTML includes getElementById(), getElementByClass(), getElementByTagName() and querySelector(). querySelector() function takes css style selector and returns the first selected element.
+                return false;
+            }
+            else if(ps==""){
+                document.getElementById("password").innerHTML="**Enter Password";
+                return false;
+            }
+            else{
+                alert("You are entered into the page :)");
+                return true;
+            }   
+        }
+
+        /*call(), apply(), bind() all allows an object to invoke another object. call() takes argument as value, apply() takes array as argument and bind() returns a new function.*/
+        function f1(){
+            return "Hello "+ this.name; //this keyword refers to the object it belongs to.
+        }
+        var obj= {name: "Muskan"};
+        f1.call(obj); //Hello Muskan
+
+        function f2(msg){
+            returns "Hello "+ this.name+ msg;
+        }
+        f2.call(obj,"Mittal"); 
+        f2.apply(obj, ["Mittal"]); 
+        var p1= f2.bind(obj, "Mittal"); 
+        p1(); //Hello Muskan Mittal
+    </script>
+</body>
+</html>

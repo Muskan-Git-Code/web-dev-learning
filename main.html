@@ -1,0 +1,160 @@
+<!DOCTYPE html> <!--It is not an HTML tag. It is used to instruct the web browser about the HTML page. If we donot put this then functions of HTML5 will not work properly.-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!--used to tell the search engine about the page content.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> <!--To name the title-->
+</head>
+<body background="background.png">
+    <h1>Heading1</h1> <h2>Heading2</h2> <h3>Heading3</h3> <h4>Heading4</h4> <h5>Heading5</h5> <h6>Heading6</h6> 
+    <p class="foo">Paragraph</p> <!--start_tag attribute value content end_tag-->
+    
+    Now for text formatting we use <b>bold</b>, <i>italic</i>, <u>underline</u>, <mark>Highlight</mark>, <del>del</del>, <sub>subscript</sub>, <sup>superscript</sup>. 
+    
+    The <hr> (for horizontal line) and <br> (for line breakage) is called as empty elements (elements with no content) or self closing elements or void elements.
+
+    <marquee>Scrolling text</marquee>
+    <blockquote>"It write text as a quoted block."</blockquote>
+
+    <!--anchor <a> tag is used to link two sections or webpages in HTML. href is used for creating hyperlinks. target blank to open link on new Page instead of same page.-->
+    <a href="https://www.javatpoint.com/html-tutorial" target="blank">HTML Tutorials </a> 
+    <br><a href="mailto: muskanmm2001@gmail.com" target="blank">Text to be clicked</a>
+
+    <!--List is used to group a set of related items in lists.-->
+    <ul type="circle"> <!--unordered list specifies with bullets and type is used to change type of bullet. The color of the bullet point is same as first leter of text after bullet.-->
+        <li>list element 1</li>
+        <li>lisr element 2</li>
+    </ul>
+    <!--The color of the bullet is always the color of the first text of the list. So, if you want to change the color of the bullet, you must change the color of the text.-->
+
+    <ol type="A" start="5"> <!--Ordered list, bydefault specifies with numbering-->
+        <li>list element 1</li>
+        <li>lisr element 2</li>
+    </ol>
+
+    <dl> <!--dl=description list, dt= description term, dd=description definition-->
+        <dt>obj1</dt> <dd>Description of object 1</dd>
+        <dt>obj2</dt> <dd>Description of object 2</dd>
+    </dl>
+
+    <!--table tag is used for making table. tr= table row, th= table heading, td= table data. cellspacing defines space between two cells and cell padding reffers to space between the cell wall and content. colspan="3" considers 3 columns as one and rowspan="2" considers 2 rows as 1.-->
+    <table border="1" cellspacing="1" cellpadding="3"> 
+        <caption>Displays caption of table</caption> 
+        <tr>  <th colspan="3">Column1</th> <th>Column2</th> <th>Column3</th>  </tr>
+        <tr>  <td rowspan="2">1.</td> <td>Muskan</td> <td>BV</td>  </tr>
+        <tr>  <td>2.</td> <td>Radhika</td> <td>YMCA</td>  </tr>
+    </table>
+
+    <!-- A semantic element clearly describes its meaning to both the browser and the developer. HTML5 has semantic elements like <form>, <footer>, <article>, <audio>, <video>. While HTML has non-semantic elements like <div>, <span>.  -->
+
+    <!--Form is used to collect the user informationand saves into database.-->    
+    <br><form action="#"> <!--form tag is used to make form. in action we write url where we want to send our complete form.-->
+        Progress: <progress value="67" max="100"></progress>
+        
+        <br>Name: <input type="text"> <!--The default size of textfield is 13 characters. HTML attributes are those which are specified directly after tag, like type is an attribute.-->
+        <br>Address: <textarea cols="10" rows="3"></textarea>
+
+        <br>Username: <span>@</span> <input placeholder="Username" type="text"> <!--placeholder for showing hints, span tag is used for injecting icons, image. Normally, span tag is used for highlighting text by adding color or background.-->
+
+        <br>Gender:<input type="radio" name="gender" value="male"> Male 
+        <input type="radio" name="gender" value="female"> Female
+
+        <br>Choice: <input type="checkbox" name="ch" value="blue"> Blue
+        <input type="checkbox" name="ch" value="pink"> Pink
+
+        <br> Email: <input type="email" name="useremail" required> <!--required attribute is used as compulsory field.-->
+
+        <br>Color: <input type="color"> 
+        <br>Date Time: <input type="datetime-local"> 
+        <br>Range: <input type="number" min="1" max="5">
+        <br>Points: <input type="range" min="1" max="5">
+
+        <br>Dropdown List: 
+        <select> 
+            <option value="">Country</option>
+            <option value="US">US</option>
+            <option value="India">India</option>
+            <option value="China">China</option>
+        </select>
+
+        <br>Autocomplete TextView: <input type="text" list="CktPlayers">    
+        <datalist id="CktPlayers">    
+            <option value="Sachin Tendulkar">    
+            <option value="Brian Lara">    
+            <option value="Jacques Kallis">    
+        </datalist>
+        
+        <br>File: <input type="file"> <!--choose file-->    
+
+        <br><input type="submit" name="Click"> <!--on clicking button, the action mentioned with form tag will be performed.-->
+
+        <!--IIly, for input type as password, date, time, month, week, number, tel, url, search-->
+    </form>
+    
+    <details> <!--defines additional details that an user can hide or view-->
+        <summary>Muskan</summary> <!--defines a visible headline for details-->
+        <p>My name is Muskan. <wbr> <!--wbr defines a possible line break-->
+            I am persuing Btech computer science from banasthali university.</p>
+    </details>
+
+    <figure> <!--specifies diagrams, photos, etc.-->
+        <img src="image.jpg" alt="Image alternate" width="150" height="200" title="Muskan"> <!--on taking cursor to that image, the title show.-->
+        <figcaption>Hello Everyone!!</figcaption> <!--provides figure caption-->
+    </figure>
+
+    <header><h2>Technical Times</h2></header> <!--defines header for a document-->
+    <nav> <!--navigation bar-->
+        <a href="Introduction.aspx">Introduction</a> |
+        <a href="IntroductionSoftware.aspx">Software</a>
+    </nav>
+    
+    <section>   <!--defines section in document-->
+        <h2>News Section</h2>
+        <article>   <!--defines article of document-->
+            <h3>New Article.</h3>
+            <p>And here is all what we want to add in this article of news Section.</p>
+        </article>
+    </section>
+
+    <footer>All rights reversed. @Muskan Mittal</footer>
+    <!--A block level elements is drawn as a block that streches to full width available and will always start on a new line, like <div>, <p>, <h1>, <h2>, <h3>, <h4>, <h5>, <h6>, <section>, <form>, <nav>, <ol>, <ul>, <li> tag. Where as Inline elements takes space that is absolutely needed, like <img>, <a>, <span>, <b>, <i>, <input>. The block elements should not be placed within inline level elements. Example: you cannot put <p> inside <b> element.-->
+    
+
+    <!--The canvas element is used to draw charts, graphics, photoshop, adding 2d images and place them directly into HTML5 code via javascript.-->
+    <canvas id="mycanvas" width="200" height="100" style="border: 1px solid #000;"></canvas>
+    <script>
+        var c= document.getElementById("mycanvas");
+        var ctx= c.getContext("2d"); //returns an object that provides methods and properties for drawing on canvas.
+        ctx.lineWidth=10; ctx.strokeStyle='yellow';  //border
+        ctx.rect(50,10,200,100); //(x-axis, y-axis, width, height) from canvas start.
+        ctx.fillStyle='green'; ctx.fill();
+        //ctx.moveTo(0,0); ctx.lineTo(200,100); make a line from (0,0) to (200,100)
+        ctx.stroke(); //used to draw the path on canvas.
+    </script>
+
+
+    <!--SVG (Scalable Vector Graphics) is used to draw graphics. It has some inbuild functions. It donot need javascript. SVG is a vector image while canvas is made using pixels.-->
+    <svg height="200" width="100" style="border: 1px solid #000;">
+        <ellipse cx="50", cy="70", rx="40", ry="60", stroke="blue" stroke-width="3" fill="red"></ellipse>
+        <!-- <circle cx="50", cy="50", r="40", stroke="blue" stroke-width="3" fill="red"></circle> where cx, cy represents x, y-axis from svg-->
+        <!-- <line x1="0", y1="0", x2="100", y2="100",stroke="blue" stroke-width="3" fill="red"></line> -->
+    </svg>
+
+    <!--Canvas is resolution dependent, has poor text rendering capabilities. While SVG is resolution independent, best suited for applications with large rendering areas (google maps). Canvas is best suited for graphic-intensive games but svg is not suited.-->
+
+    <!--audio specifies standard way of embedding audio in webpage. Controls attribute adds audio controls like play, pause and volume. Loop allow to replay the audio file automatically after it finishes and autoplay plays the audio file automatically when page reload.-->
+    <audio controls loop autoplay> 
+        <source src="audio.mp3" type="audio/mp3">
+    </audio>
+
+    <video controls width="300px" loop autoplay muted> <!--plays automatically in a loop in muted manner.-->
+        <source src="video.mp4" type="video/mp4">
+    </video>
+
+    <!--iframe is used to display a webpage within a webpage. Open any video on youtube, go to share, select embed then copy the complete text and paste in html code of webpage where you want to see that video. As follows:-->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/TwUxk7RffCE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <!--An embed tag is used for including a video or audio in an HTML document.-->
+
+    <!--An image map facilitates you to link many different web pages using a single image. It is represented by <map> tag. For example: In a picture of solar system,if you move cursor to sun or any planet, then another webpage open which explains about sun or any planet. -->
+</body>
+</html>
